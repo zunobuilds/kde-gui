@@ -21,16 +21,15 @@ KDE GUI, GNOME GUI and Unified GUI are separate library projects. Future example
 
 ## Getting started
 
-You can explore the plans and help shape the first prototype today. With access to this private repository, all you need for documentation work is **Git and Python 3**:
+You can explore the plans and help shape the first prototype today. With access to this private repository, clone it and check documentation edits with Git:
 
 ```sh
 git clone https://github.com/zunobuilds/kde-gui.git
 cd kde-gui
-python3 tools/check_docs.py
 git diff --check
 ```
 
-These commands check documentation links, headings and formatting; Qt is not needed at this stage. Library setup and usage instructions will follow the first working prototype. The [K-001 plan](docs/K-001.md) covers its requirements and acceptance tests.
+`git diff --check` catches whitespace errors in your edits; Qt is not needed for documentation work. Library setup and usage instructions will follow the first working prototype. The [K-001 plan](docs/K-001.md) covers its requirements and acceptance tests.
 
 ## Roadmap
 
@@ -43,7 +42,6 @@ These commands check documentation links, headings and formatting; Qt is not nee
 - [Project purpose and architecture](docs/ARCHITECTURE.md) and [accepted decisions](docs/DECISIONS.md) — the technical direction and choices still open.
 - [K-001 implementation plan](docs/K-001.md) — the counter milestone, dependency review and validation criteria.
 - [Theme support](docs/THEME_SUPPORT.md) — native appearance goals and current limitations.
-- [Repository layout](docs/REPOSITORY_AUDIT.md) — where project material belongs and what stays local.
 
 ## Contributions
 

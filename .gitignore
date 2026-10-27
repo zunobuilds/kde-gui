@@ -2,13 +2,15 @@
 /references/kde-system-apps/
 # Downloaded skills stay local; installation provenance is documented separately
 /.agents/skills/
-# All telemetry/controller source, configurations, tests, logs and checkpoints
+# Local developer tools, including documentation checks and telemetry/controllers
 /.work/
-/tools/telemetry/
-/tools/controller/
-/tools/usage-control/
+/tools/
+# Local process records and environment inventories
 /docs/CONTAINMENT_CHECKLIST.md
 /docs/TASK_CHECKPOINT.md
+/docs/REPOSITORY_AUDIT.md
+/docs/RESEARCH.md
+/docs/SKILLS_INSTALLED.md
 # Credentials, including nested environment files
 **/.env
 **/.env.*
