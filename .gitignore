@@ -24,6 +24,8 @@
 /.codex/
 # Generated builds and local caches
 /target/
+**/target/
+**/.qmlls.ini
 /build/
 /dist/
 /.cache/

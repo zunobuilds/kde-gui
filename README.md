@@ -1,31 +1,31 @@
 # KDE GUI
 
-A planned library for native KDE applications, with a reusable Rust API and independently importable QML components.
+A library experiment for native KDE applications, with a reusable Rust API and independently importable QML components.
 
-**Status: planning only.** No installable library or runnable demo yet.
+**Status: experimental.** The counter API, CXX-Qt bridge and installed QML module pass automated checks on Fedora 44. Native appearance and assistive-technology acceptance remain unverified.
 
-## Planned features
+## Current features
 
-- Rust state connected to QML through CXX-Qt.
-- Native KDE appearance using Qt 6 and QML/Kirigami.
-- Keyboard support, accessibility and separate consumer examples.
+- A dependency-free Rust `Counter` with explicit saturation behavior.
+- A read-only observable `CounterState` and a QML `CounterView` with a label and button.
+- Qt Quick Controls and Kirigami spacing, independent instances and separate Rust/QML consumers.
 
-The build will start with Cargo. CMake will be considered only if QML packaging tests justify it.
+Cargo builds the Rust library and bridge. A small CMake wrapper links and installs the QML plugin; a direct Cargo dynamic-library import failed during packaging tests.
 
 ## Getting started
 
-Build requirements and usage instructions will be published with the first working version. The [technical overview](docs/ARCHITECTURE.md) describes the planned stack and library boundaries.
+Run the Rust foundation tests with `cargo test --locked`. The [build and consumer instructions](docs/BUILDING.md) cover requirements, Qt integration, installation and the QML demonstration. The [technical overview](docs/ARCHITECTURE.md) describes ownership and packaging.
 
 ## Roadmap
 
 ### Library foundation
 
-- [ ] Establish the Rust API and QML components.
-- [ ] Verify both from separate applications.
+- [x] Establish the experimental Rust API and QML components.
+- [x] Verify both from separate applications.
 
 ### KDE integration
 
-- [ ] Verify packaging and module installation on Fedora KDE.
+- [x] Verify local module installation and independent imports on Fedora.
 - [ ] Check themes, scaling, keyboard navigation and accessibility.
 
 ### Example application
@@ -35,7 +35,7 @@ Build requirements and usage instructions will be published with the first worki
 
 ## Documentation
 
-[Technical overview](docs/ARCHITECTURE.md) · [Project decisions](docs/DECISIONS.md) · [Appearance and accessibility](docs/THEME_SUPPORT.md) · [Changelog](changelog/README.md)
+[Technical overview](docs/ARCHITECTURE.md) · [Project decisions](docs/DECISIONS.md) · [Dependencies](docs/DEPENDENCIES.md) · [Appearance and accessibility](docs/THEME_SUPPORT.md) · [Changelog](changelog/README.md)
 
 ## Contributions
 

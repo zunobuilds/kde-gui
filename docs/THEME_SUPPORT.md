@@ -1,6 +1,10 @@
 # Appearance and accessibility
 
-Native behavior is a project goal. It has not been verified in a running KDE GUI application.
+Native behavior is a project goal. The experimental counter uses unmodified Qt Quick Controls and Kirigami spacing. Its native appearance has not been visually accepted on a KDE desktop.
+
+## Automated evidence
+
+On Fedora 44 with Qt 6.11.2, offscreen tests verify Space activation, Tab/Shift+Tab traversal between two counters, label binding updates and the label's accessible name following its value. These checks do not inspect the platform accessibility tree or establish screen-reader announcements, visible focus or native theme behavior.
 
 ## Appearance goals
 

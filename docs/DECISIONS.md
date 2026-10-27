@@ -4,15 +4,27 @@
 
 - A reusable KDE library with Rust and independent QML interfaces.
 - Rust, Qt 6, QML/Kirigami and CXX-Qt for the first prototype.
-- Cargo-first builds; CMake requires evidence from packaging tests.
+- Cargo-first builds; CMake is limited to QML plugin linking and installation after a direct Cargo plugin import failed.
 - Separate consumer applications to verify library reuse.
 - Application-specific logic stays outside the library.
 
 ## Open questions
 
 - Minimum Rust, compiler, Qt and Kirigami versions.
-- Crate name, QML module identifier and public API.
-- Installation layout and distribution packaging.
+- Stable public API and release naming.
+- Distribution packaging and supported installation layout beyond the Linux experiment.
+
+## Experimental implementation choices
+
+- Crate: `kde-gui` 0.1.0; Rust import: `kde_gui`.
+- Rust API: `Counter::default()`, `value()` and `increment()`.
+- QML module: `org.zunobuilds.kdegui`; types: `CounterState` and `CounterView`.
+- State: initially zero, saturating at `i32::MAX`, one notification per effective bridge change.
+- Ownership: each view owns its state; no shared singleton or asynchronous layer.
+- Dependencies: CXX-Qt 0.10.0 and CXX 1.0.205, with transitive versions recorded in `Cargo.lock`. No `cxx-qt-lib` dependency is needed for the integer-only bridge.
+- Packaging: a CMake Qt plugin wrapper around the Cargo static archive. The [technical overview](ARCHITECTURE.md#build-and-packaging) records the failed direct dynamic-plugin import that justified this addition.
+
+These identifiers and the installed layout are experimental. The [build instructions](BUILDING.md) record tested tool versions without claiming a minimum supported platform matrix.
 
 ## Example direction
 

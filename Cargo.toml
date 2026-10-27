@@ -1,0 +1,29 @@
+[package]
+name = "kde-gui"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Experimental reusable Rust state and KDE QML components"
+repository = "https://github.com/zunobuilds/kde-gui"
+publish = false
+include = [
+    "/src/**", "/qml/**", "/native/**", "/tests/**",
+    "/build.rs", "/CMakeLists.txt", "/Cargo.lock", "/LICENSE-*", "/README.md",
+    "/changelog/**", "/docs/ARCHITECTURE.md", "/docs/BUILDING.md",
+    "/docs/DEPENDENCIES.md", "/docs/DECISIONS.md",
+    "/docs/DEVELOPMENT_TOOLS.md", "/docs/THEME_SUPPORT.md",
+]
+
+[lib]
+crate-type = ["rlib", "staticlib"]
+
+[features]
+default = []
+qt = ["dep:cxx", "dep:cxx-qt", "dep:cxx-qt-build"]
+
+[dependencies]
+cxx = { version = "=1.0.205", optional = true }
+cxx-qt = { version = "=0.10.0", optional = true }
+
+[build-dependencies]
+cxx-qt-build = { version = "=0.10.0", optional = true }
