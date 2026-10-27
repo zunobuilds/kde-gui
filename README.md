@@ -35,7 +35,7 @@ Build requirements and usage instructions will be published with the first worki
 
 ## Documentation
 
-[Technical overview](docs/ARCHITECTURE.md) · [Project decisions](docs/DECISIONS.md) · [Appearance and accessibility](docs/THEME_SUPPORT.md)
+[Technical overview](docs/ARCHITECTURE.md) · [Project decisions](docs/DECISIONS.md) · [Appearance and accessibility](docs/THEME_SUPPORT.md) · [Changelog](changelog/README.md)
 
 ## Contributions
 
