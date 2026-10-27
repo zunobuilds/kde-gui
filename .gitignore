@@ -5,8 +5,7 @@
 # Local developer tools, including documentation checks and telemetry/controllers
 /.work/
 /tools/
-# Local agent instructions, internal plans and process records
-/AGENTS.md
+# Local internal plans and process records
 /docs/K-001.md
 /docs/CONTAINMENT_CHECKLIST.md
 /docs/TASK_CHECKPOINT.md
