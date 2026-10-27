@@ -20,9 +20,20 @@ Read the [K-001 counter plan](docs/K-001.md) for requirements and acceptance tes
 
 ## Roadmap
 
-1. Prove the counter with separate Rust and QML consumers.
-2. Verify packaging, themes, keyboard operation and accessibility on Fedora KDE.
-3. Add a calculator with math and state in the example, then compare usage across the three independent libraries.
+### 1. Counter prototype — K-001
+
+- [ ] Build the Cargo-first counter with Rust state and a QML label/button.
+- [ ] Prove separate downstream Rust and QML consumers.
+
+### 2. KDE validation
+
+- [ ] Verify QML packaging on Fedora KDE.
+- [ ] Check themes, scaling, keyboard operation and accessibility.
+
+### 3. Calculator example
+
+- [ ] Add calculator math and state in the example, with safe input and division-by-zero handling.
+- [ ] Compare usage across the independent KDE, GNOME and Unified libraries.
 
 ## Documentation
 
