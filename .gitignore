@@ -1,0 +1,34 @@
+# Private screenshot intake and provenance; not redistributable assets
+/references/kde-system-apps/
+# Downloaded skills stay local; installation provenance is documented separately
+/.agents/skills/
+# All telemetry/controller source, configurations, tests, logs and checkpoints
+/.work/
+/tools/telemetry/
+/tools/controller/
+/tools/usage-control/
+/docs/CONTAINMENT_CHECKLIST.md
+/docs/TASK_CHECKPOINT.md
+# Credentials, including nested environment files
+**/.env
+**/.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+/.aws/
+/.codex/
+# Generated builds and local caches
+/target/
+/build/
+/dist/
+/.cache/
+/.venv/
+/.pytest_cache/
+__pycache__/
+*.pyc
+*.log
+# Editor scratch
+*.swp
+*~
