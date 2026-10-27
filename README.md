@@ -8,43 +8,41 @@ A planned library for native KDE applications, with a reusable Rust API and inde
 
 - Rust state connected to QML through CXX-Qt.
 - Native KDE appearance using Qt 6 and QML/Kirigami.
-- Keyboard operation, accessibility and independent consumer examples.
+- Keyboard support, accessibility and separate consumer examples.
 
-The prototype is Cargo-first. CMake will be considered only if QML packaging tests justify it.
-
-KDE GUI, GNOME GUI and Unified GUI remain independent library projects.
+The build will start with Cargo. CMake will be considered only if QML packaging tests justify it.
 
 ## Getting started
 
-Read the [K-001 counter plan](docs/K-001.md) for requirements and acceptance tests. Library setup and usage instructions will follow the first working prototype.
+Build requirements and usage instructions will be published with the first working version. The [technical overview](docs/ARCHITECTURE.md) describes the planned stack and library boundaries.
 
 ## Roadmap
 
-### 1. Counter prototype — K-001
+### Library foundation
 
-- [ ] Build the Cargo-first counter with Rust state and a QML label/button.
-- [ ] Prove separate downstream Rust and QML consumers.
+- [ ] Establish the Rust API and QML components.
+- [ ] Verify both from separate applications.
 
-### 2. KDE validation
+### KDE integration
 
-- [ ] Verify QML packaging on Fedora KDE.
-- [ ] Check themes, scaling, keyboard operation and accessibility.
+- [ ] Verify packaging and module installation on Fedora KDE.
+- [ ] Check themes, scaling, keyboard navigation and accessibility.
 
-### 3. Calculator example
+### Example application
 
-- [ ] Add calculator math and state in the example, with safe input and division-by-zero handling.
-- [ ] Compare usage across the independent KDE, GNOME and Unified libraries.
+- [ ] Build a small KDE showcase using the public API.
+- [ ] Document setup and usage from a separate project.
 
 ## Documentation
 
-[Purpose and architecture](docs/ARCHITECTURE.md) · [Decisions](docs/DECISIONS.md) · [Theme goals and limitations](docs/THEME_SUPPORT.md)
+[Technical overview](docs/ARCHITECTURE.md) · [Project decisions](docs/DECISIONS.md) · [Appearance and accessibility](docs/THEME_SUPPORT.md)
 
 ## Contributions
 
-Design feedback, packaging research and documentation improvements are welcome. Review the [decisions](docs/DECISIONS.md) and keep changes focused.
+Focused documentation, packaging research and API feedback are welcome. Planned work and open questions are listed in [project decisions](docs/DECISIONS.md).
 
 ## Licensing
 
-Project-owned code and documentation are licensed under [MIT](LICENSE-MIT) **or** [Apache 2.0](LICENSE-APACHE), at your option. Dependencies retain their own licences.
+Dual-licensed under [MIT](LICENSE-MIT) **OR** [Apache 2.0](LICENSE-APACHE). Dependencies retain their own licences.
 
 [Developed with the help of OpenAI Codex and cloud AI models.](docs/DEVELOPMENT_TOOLS.md)

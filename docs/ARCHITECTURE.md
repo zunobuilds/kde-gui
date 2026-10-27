@@ -1,7 +1,21 @@
-# Architecture (planned)
+# Technical overview
 
-The KDE library will expose a reusable Rust facade and a standalone importable QML component layer. Initial prototype: Rust + Qt 6 + QML/Kirigami + CXX-Qt, built Cargo-first; CMake is an optional later aid only if independent QML installation/import requires it.
+KDE GUI is planned as a reusable library for native KDE applications. The public interface has not been implemented yet.
 
-The K-001 counter is the first integration proof; the calculator follows after separate external Rust and QML consumer imports and native KDE theming/accessibility validation. Calculator logic stays in the example consumer. No implementation, module identifier or public API is selected or tested yet.
+## Stack
 
-The future GNOME and Unified GUI repos are independent projects; unified consumes independently versioned, tested-compatible KDE/GNOME libraries and preserves application state across a supported frontend switch or reinitialization. Seamless instantaneous native toolkit hot-swapping is unverified.
+- **Rust** manages state and application-facing operations.
+- **Qt 6 and QML/Kirigami** provide controls and presentation.
+- **CXX-Qt** connects Rust state to Qt properties and actions.
+
+## Library boundaries
+
+The library will expose a Rust API and independently importable QML components. Separate consumer applications must demonstrate both interfaces.
+
+Application-specific behavior belongs in each consumer. Example applications will demonstrate the public API without becoming dependencies of the library.
+
+## Build and packaging
+
+Cargo is the initial build entry point. Independent QML installation and import must be tested before deciding whether CMake is needed.
+
+Supported versions, crate names, module identifiers and installation paths remain open. Initial native validation targets Fedora KDE.
