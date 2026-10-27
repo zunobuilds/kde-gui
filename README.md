@@ -22,7 +22,7 @@ Read the [K-001 counter plan](docs/K-001.md) for requirements and acceptance tes
 
 ### 1. Counter prototype — K-001
 
-- [ ] Build the Cargo-first counter with Rust state and a QML label/button.
+- [1] Build the Cargo-first counter with Rust state and a QML label/button.
 - [ ] Prove separate downstream Rust and QML consumers.
 
 ### 2. KDE validation
