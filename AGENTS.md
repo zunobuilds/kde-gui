@@ -4,7 +4,8 @@
 Create an independent, reusable, greenfield KDE GUI library. No code, architecture, AGENTS instructions, launchers or telemetry inherited from other projects. Do not implement GNOME GUI, Unified GUI, hardware control or a fourth shared repository here. Retain working behavior, inspect relevant files before proposing changes, and keep dependencies minimal.
 
 ## Accepted PLANNED baseline
-- Rust + Qt 6 + QML/Kirigami + CXX-Qt is the first prototype. Cargo-first; CMake is conditional on evidence from real import/packaging tests. Versions, crate name, module URI, final licence and public API identifiers remain OPEN.
+- Rust + Qt 6 + QML/Kirigami + CXX-Qt is the first prototype. Cargo-first; CMake is conditional on evidence from real import/packaging tests. Versions, crate name, module URI and public API identifiers remain OPEN.
+- Project-owned code and documentation use `MIT OR Apache-2.0`, at the recipient's option. Preserve dependency licences and third-party notices; local reference screenshots are excluded from this grant.
 - Deliver a reusable Rust API **and** independently importable QML components. Demonstrate with separate downstream Rust and QML consumers, not only a demo in the same crate.
 - First implementation milestone **K-001**: label/counter, Rust state bridge if appropriate, native KDE appearance, keyboard/accessibility verification and separate consumer proofs. Plan and verify this small milestone before the calculator.
 - Later example: runnable calculator (digits, decimal, +, -, *, /, =, clear, safe input/zero-division), with calculator math/state in the example. Design high-level consumer usage for near-parity with future separate GNOME and Unified demos without coupling repositories.
@@ -21,7 +22,7 @@ Inspect `references/kde-system-apps/README.md` and `manifest.json`. Reference PN
 - Preserve the README's linked AI credit. `docs/DEVELOPMENT_TOOLS.md` records **skills actually invoked**, with upstream, revision/date and concrete purpose; installed is not used. Initially none recorded.
 
 ## Files and security
-- Updated operator authorization: edit files and Git metadata inside this KDE repository, commit and push to its own private GitHub repository, and use networking and web research.
+- Updated operator authorization: edit files and Git metadata inside this KDE repository, commit and push to `zunobuilds/kde-gui`, and use networking and web research. The operator intentionally made this repository public.
 - Do not write to directories outside this repository. The explicitly authorized GitHub remote is the only external publication target.
 - Do not modify unrelated local or GitHub repositories, global configurations or operating-system packages. No sudo or sandbox bypass.
 - Check staged files before pushing. Keep local reference PNGs, downloaded skills, secrets and .work/ out of Git.

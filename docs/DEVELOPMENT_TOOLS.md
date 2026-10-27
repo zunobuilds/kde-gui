@@ -20,3 +20,7 @@ The three web pages are recorded by access date; no immutable page revision was 
 **No skills have been invoked for the recorded work.** Installation alone does not count as use. Skill installation inventories, local tool provenance and session records remain local and Git-ignored.
 
 When a skill is invoked, record its upstream URL, immutable commit or dated revision, concrete purpose/output and evidence here.
+
+## Licensing research — 2026-10-27
+
+Codex researched primary MIT/Apache licence texts, Rust/CXX-Qt licensing and Qt/Kirigami dependency terms, selected `MIT OR Apache-2.0`, and applied the grant and documentation updates. Sources, inspected revisions, rationale and scope are recorded in [the licence decision](DECISIONS.md#licensing). Standard licence texts were reproduced for the grant, with the MIT copyright line filled in; no upstream implementation code or assets were imported. No skills were invoked or Rust/QML implementation performed.

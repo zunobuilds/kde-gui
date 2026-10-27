@@ -45,6 +45,6 @@ Design feedback, packaging research and documentation improvements are welcome. 
 
 ## Licensing
 
-The project licence is **undecided**. No open-source licence grant is provided yet.
+Project-owned code and documentation are licensed under [MIT](LICENSE-MIT) **or** [Apache 2.0](LICENSE-APACHE), at your option. Dependencies retain their own licences.
 
 [Developed with the help of OpenAI Codex and cloud AI models.](docs/DEVELOPMENT_TOOLS.md)
