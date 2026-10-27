@@ -1,6 +1,6 @@
 # Development assistance
 
-OpenAI Codex and cloud AI models assisted with planning, documentation, licensing research, implementation and automated verification of the counter prototype. Native appearance and assistive-technology acceptance remain unverified.
+OpenAI Codex and cloud AI models assisted with planning, documentation, licensing research, implementation and automated verification of the counter prototype. Native rendering, synthetic interaction and AT-SPI event delivery have agent-produced evidence; physical scaling and audible screen-reader acceptance remain unverified.
 
 ## Recorded tools
 
@@ -14,13 +14,15 @@ Local tool inventories, internal plans and session records remain Git-ignored.
 
 ## Implementation skills
 
-Invoked 27 October 2026; revisions are from the retained installation provenance. Skill guidance was applied without importing upstream implementation code.
+Invoked for implementation and stabilization on 27 October 2026; revisions are from the retained installation provenance. Skill guidance was applied without importing upstream implementation code.
 
 | Skill | Upstream revision | Concrete purpose |
 | --- | --- | --- |
 | Rust Best Practices, version 1.1.2 | [apollographql/skills](https://github.com/apollographql/skills/tree/5a62472a19f6d39abc727ffbe36e3dac7c747641), `5a62472a19f6d39abc727ffbe36e3dac7c747641` | Counter ownership, documented API, saturation tests and Clippy checks |
-| Qt QML, version 1.2 | [TheQtCompanyRnD/agent-skills](https://github.com/TheQtCompanyRnD/agent-skills/tree/6845f02d41171a6df8b6e6fe225b7f5d1a6f4adf), `6845f02d41171a6df8b6e6fe225b7f5d1a6f4adf` | Native controls, layout, translation and accessibility properties |
-| Qt Quick Test, version 1.0 | [TheQtCompanyRnD/agent-skills](https://github.com/TheQtCompanyRnD/agent-skills/tree/6845f02d41171a6df8b6e6fe225b7f5d1a6f4adf), `6845f02d41171a6df8b6e6fe225b7f5d1a6f4adf` | QML interaction, binding, notification, focus and instance-isolation tests |
+| Qt QML, version 1.2 | [TheQtCompanyRnD/agent-skills](https://github.com/TheQtCompanyRnD/agent-skills/tree/6845f02d41171a6df8b6e6fe225b7f5d1a6f4adf), `6845f02d41171a6df8b6e6fe225b7f5d1a6f4adf` | Native controls, layout, translation, accessibility properties and count announcement handling |
+| Qt Quick Test, version 1.0 | [TheQtCompanyRnD/agent-skills](https://github.com/TheQtCompanyRnD/agent-skills/tree/6845f02d41171a6df8b6e6fe225b7f5d1a6f4adf), `6845f02d41171a6df8b6e6fe225b7f5d1a6f4adf` | QML interaction, binding, notification, focus, disabled input, larger-font layout and instance-isolation tests |
+
+The stabilization continuation also used GDB to seed private Rust state in an isolated debug test process for the integer-limit integration check. Production state initialization and the public API were unchanged. An optional Python GObject/AT-SPI inspector supports native evidence collection and was exercised against a uniquely named consumer. It supports application-name matching when host and sandbox PID namespaces differ. Native light/dark captures, synthetic keyboard/resize probes and AT-SPI action/announcement checks were performed without changing desktop settings. Audible speech remains unverified.
 
 ## Documentation references
 

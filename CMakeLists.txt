@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.24)
 project(kde_gui LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Qml QuickControls2)
+find_package(Qt6 6.8 REQUIRED COMPONENTS Core Qml QuickControls2)
 find_program(CARGO_EXECUTABLE cargo REQUIRED)
 
 set(CMAKE_AUTOMOC ON)
@@ -65,9 +65,14 @@ install(FILES LICENSE-MIT LICENSE-APACHE
 
 include(CTest)
 if(BUILD_TESTING)
+    find_package(Qt6 REQUIRED COMPONENTS Quick Test)
+    add_executable(counter_accessibility_test tests/accessibility.cpp)
+    target_link_libraries(counter_accessibility_test PRIVATE Qt6::Quick Qt6::Test)
+    add_dependencies(counter_accessibility_test kde_gui_plugin)
+    add_test(NAME counter-accessibility COMMAND counter_accessibility_test)
     find_program(QMLTESTRUNNER_EXECUTABLE NAMES qmltestrunner-qt6 qmltestrunner REQUIRED)
     add_test(NAME qml-counter COMMAND "${QMLTESTRUNNER_EXECUTABLE}"
         -input "${CMAKE_CURRENT_SOURCE_DIR}/tests")
-    set_tests_properties(qml-counter PROPERTIES TIMEOUT 30
-        ENVIRONMENT "QT_QPA_PLATFORM=offscreen;QSG_RHI_BACKEND=software;QT_FORCE_STDERR_LOGGING=1;QML_IMPORT_PATH=${CMAKE_CURRENT_BINARY_DIR}/qml")
+    set_tests_properties(qml-counter counter-accessibility PROPERTIES TIMEOUT 30
+        ENVIRONMENT "QT_QPA_PLATFORM=offscreen;QT_QUICK_BACKEND=software;QT_FORCE_STDERR_LOGGING=1;KDE_HOME_READONLY=1;QML_IMPORT_PATH=${CMAKE_CURRENT_BINARY_DIR}/qml")
 endif()

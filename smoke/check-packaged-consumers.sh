@@ -36,8 +36,9 @@ cmake --build qml-build
 unset QML2_IMPORT_PATH
 export QML_IMPORT_PATH="$proof_dir/imports"
 export QT_QPA_PLATFORM=offscreen
-export QSG_RHI_BACKEND=software
+export QT_QUICK_BACKEND=software
 export QT_FORCE_STDERR_LOGGING=1
+export KDE_HOME_READONLY=1
 qml-build/kde_gui_qml_consumer "$proof_dir/qml-consumer/Main.qml" --check
 qmltestrunner=$(command -v qmltestrunner-qt6 || command -v qmltestrunner)
 "$qmltestrunner" -input tests

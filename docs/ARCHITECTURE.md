@@ -12,7 +12,7 @@ The optional `qt` feature adds a CXX-Qt QObject named `CounterState`, registered
 
 ## Presentation
 
-`CounterView` uses a Qt Quick Controls `Label` and `Button`, with Kirigami semantic spacing. Control styling, fonts and colors come from Qt/KDE configuration. The increment button disables at the integer limit. User-visible strings use QML translation functions.
+`CounterView` uses a Qt Quick Controls `Label` and `Button`, with Kirigami semantic spacing. Control styling, fonts and colors come from Qt/KDE configuration. The increment button disables at the integer limit. User-visible strings use QML translation functions. Changed count text requests a polite accessibility announcement through Qt; initial construction does not announce a change. Audible delivery depends on the desktop accessibility bridge and screen reader and remains **UNVERIFIED**.
 
 Application windows and application-specific behavior belong to consumers. `smoke/qml-consumer` provides a separately built engine and a Kirigami window containing two independent counters.
 

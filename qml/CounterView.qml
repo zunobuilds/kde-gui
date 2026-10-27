@@ -16,9 +16,14 @@ ColumnLayout {
     }
 
     Label {
+        id: counterLabel
         objectName: "counterLabel"
         text: qsTr("Count: %1").arg(root.value)
         Accessible.name: text
+        onTextChanged: {
+            if (root.value > 0)
+                Accessible.announce(counterLabel.text, Accessible.Polite)
+        }
     }
 
     Button {
