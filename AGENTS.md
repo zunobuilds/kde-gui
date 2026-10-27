@@ -1,5 +1,13 @@
 # KDE GUI agent instructions
 
+## Current Codex workflow (27/10/26; supersedes older execution gates)
+
+- KDE GUI source implementation is authorized. The retired custom launcher and its operator-observed containment checklist are historical/deferred, **not prerequisites** to planning, source edits, builds or tests. Do not claim the old launcher was validated.
+- Use standard Codex CLI in its actual active sandbox and follow its technical boundaries. No sudo, no sandbox bypass and no edits to unrelated repositories.
+- The **global external `codex-run` launcher**, not this agent or any local telemetry script, is responsible for the 5-hour and weekly quota policy: conserve at 15% remaining, stop at 9% remaining. Do **not** ask for manual percentages/reset times, pause ordinary project work due to agent-side unknown readings, or claim that prompts enforce these limits. If the launcher cannot query both windows, it refuses to start or continue the session. Never automatically redeem quota resets.
+- In `workspace-write`, `.git/` is protected. Do not repeatedly attempt Git commits or approval-required GitHub MCP write actions with approval policy `never`. Implement and test inside the workspace; report exact reviewed files so a normal terminal can perform Git staging, commits and pushes outside the Codex sandbox.
+- Keep the full plan and operational checkpoints Git-ignored; keep `AGENTS.md` and the public daily changelog tracked. Preserve all existing technical decisions.
+
 ## Role and scope
 Create an independent, reusable, greenfield KDE GUI library. No code, architecture, AGENTS instructions, launchers or telemetry inherited from other projects. Do not implement other desktop-toolkit libraries, cross-toolkit unification, hardware control or a fourth shared repository here. Retain working behavior, inspect relevant files before proposing changes, and keep dependencies minimal.
 
@@ -19,7 +27,7 @@ Inspect `references/kde-system-apps/README.md` and `manifest.json`. Reference PN
 - Prefer maintainable code, focused tests, helpful errors and explicit platform limitations. Dependencies and their licences require review.
 - Follow source docs/DECISIONS.md; distinguish PLANNED, EXPERIMENTAL and UNVERIFIED from tested results.
 - Keep docs concrete and concise. Do not copy third-party prose/assets or claim builds/reviews passed that were not observed.
-- Preserve the README's linked AI credit. `docs/DEVELOPMENT_TOOLS.md` records **skills actually invoked**, with upstream, revision/date and concrete purpose; installed is not used. Initially none recorded.
+- Preserve the README's linked AI credit. `docs/DEVELOPMENT_TOOLS.md` records **skills actually invoked**, with upstream, revision/date and concrete purpose; installed skills do not count as use.
 
 ## Files and security
 - Updated operator authorization: edit files and Git metadata inside this KDE repository, commit and push to `zunobuilds/kde-gui`, and use networking and web research. The operator intentionally made this repository public.
@@ -28,14 +36,22 @@ Inspect `references/kde-system-apps/README.md` and `manifest.json`. Reference PN
 - Check staged files before pushing. Keep local reference PNGs, downloaded skills, secrets and .work/ out of Git.
 - Preserve the independent greenfield library and truthful development evidence.
 
+## Active development sandbox
+- Use standard Codex CLI with `--sandbox workspace-write --ask-for-approval never` and the actual session permission profile. Keep the sandbox enabled; do not request escalation or change external configuration to bypass a denial.
+- The former custom launcher is retired. Its operator-observed confinement verification is **NOT PERFORMED / DEFERRED**, never PASSED, and is not a prerequisite for saving plans, editing source, building or testing. Do not request confirmation of this already-authorized correction.
+- Workspace-write is not proof of repository-only read isolation, parent/sibling read denial or custom-launcher confinement. Temporary directories and other roots can depend on the active profile. Repository-only writes remain project policy even where the runtime permits additional locations. Report actual access failures without inventing confinement tests.
+- Preserve historical security records as historical evidence. Superseded launcher requirements in ignored records or archives cannot reinstate an implementation gate. Native GUI, keyboard and accessibility validation remain required product checks.
+
 ## Local telemetry / checkpoints
 - Retain reviewed local `tools/telemetry/telemetry.py` and any local timing/supervisor tooling. Keep all telemetry/controller source, configurations, tests and logs Git-ignored; outputs belong under `.work/`. Do not store raw prompts, secrets, complete personal paths or command env dumps.
 - Telemetry isn't independent proof: agents can alter their own `.work/` records. Clearly identify evidence collected by the operator vs agent-produced records.
-- Current operator usage policy supersedes the historical 13%/8% thresholds: check both actual five-hour and weekly windows and apply the stricter remaining percentage. Above 15% continue; above 9% through 15% conserve; at or below 9% stop new work; at or below 1% preserve the emergency safeguard. Unknown, stale or unavailable usage fails closed for new workloads; finish at most one bounded safe checkpoint. Never fabricate percentages/reset times, redeem resets automatically or claim active enforcement from prompt instructions or synthetic tests alone.
+- Usage policy is separate from sandbox verification. Do not claim automatic quota enforcement by the standard CLI, prompt instructions or retained local supervisor without observed integration. Use a supported available usage source; do not repeatedly request manual readings.
 - Report Git SHA + dirty state, phase timing and test results if observable. Missing values remain unknown, no guessed performance numbers.
 
-## Execution gate
-- First task may improve repository documentation and organization, create a private GitHub repository, commit and push, and plan K-001. No Rust/QML implementation or calculator coding yet.
+## Authorized implementation scope
+- The documentation-only first-task restriction is superseded. Resume the approved K-001 label/counter implementation plan under the active sandbox and the separate usage policy, without another confinement question or implementation approval request.
+- Read the complete ignored plan at `.work/plans/KDE_GUI_INITIAL_IMPLEMENTATION.md` when available, otherwise `docs/K-001.md`, together with the current local checkpoint. A fresh clone may lack these local files; reconstruct the bounded plan from this baseline and `docs/DECISIONS.md` without restoring a launcher gate.
+- Preserve the accepted technical decisions and complete implementation plan. Later showcase/calculator coding remains outside this bounded implementation authorization.
 
 ### Repository documentation voice
 

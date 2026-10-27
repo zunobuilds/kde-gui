@@ -7,7 +7,8 @@ OpenAI Codex and cloud AI models assisted with planning, documentation, licensin
 - **Upstream:** [OpenAI Codex](https://github.com/openai/codex).
 - **Observed CLI version:** 0.164.0 on 27 October 2026.
 - **Cloud model revision:** unavailable.
-- **Skills invoked:** none. Installed skills do not count as use.
+- **Skill invoked:** OpenAI Docs (`openai-docs`), provided with [OpenAI Codex](https://github.com/openai/codex), accessed 27 October 2026; immutable skill revision unavailable. Used to check official CLI sandbox and approval flag documentation for the development workflow update. Installed skills do not count as use.
+- **Official reference:** [Codex CLI reference](https://learn.chatgpt.com/docs/developer-commands?surface=cli), accessed 27 October 2026. Documentation establishes flag meanings, not independent verification of a running sandbox.
 
 Local tool inventories, internal plans and session records remain Git-ignored.
 
