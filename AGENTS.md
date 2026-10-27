@@ -24,7 +24,7 @@ Inspect `references/kde-system-apps/README.md` and `manifest.json`. Reference PN
 ## Files and security
 - Updated operator authorization: edit files and Git metadata inside this KDE repository, commit and push to `zunobuilds/kde-gui`, and use networking and web research. The operator intentionally made this repository public.
 - Do not write to directories outside this repository. The explicitly authorized GitHub remote is the only external publication target.
-- Do not modify unrelated local or GitHub repositories, global configurations or operating-system packages. No sudo or sandbox bypass.
+- Do not modify unrelated local or GitHub repositories. No sudo or sandbox bypass.
 - Check staged files before pushing. Keep local reference PNGs, downloaded skills, secrets and .work/ out of Git.
 - Preserve the independent greenfield library and truthful development evidence.
 
