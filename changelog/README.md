@@ -6,6 +6,7 @@ Daily summaries of meaningful repository changes, newest first.
 
 ## Daily logs
 
+- [29/10/26](29-10-26.md)
 - [28/10/26](28-10-26.md)
 - [27/10/26](27-10-26.md)
 
