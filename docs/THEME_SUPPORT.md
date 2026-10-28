@@ -89,8 +89,8 @@ Record the package versions, selected color scheme, configured font, display sca
 
 - Launch under KDE light and dark color schemes. Inspect text contrast, native button surfaces and pressed, hovered, disabled and focused appearances. Record whether a restart is required after a setting change; live theme propagation is **UNVERIFIED**.
 - Resize the two-counter window, including its smallest usable size. Check for clipped labels/buttons with the configured font and larger text. Repeat at 100%, 150% and 200% display scaling where available. Physical scaling and font rendering remain **UNVERIFIED**.
-- Use Tab and Shift+Tab to reach both buttons; inspect visible focus. Use Space to increment each independently. Record Return and keypad Enter behavior under the selected native control style. Native keyboard behavior remains **UNVERIFIED**.
-- Inspect the AT-SPI tree with an accessibility inspector. Confirm count text, action names, roles, focus order and enabled/focused states. With a screen reader active, increment each counter and confirm that the corresponding updated count is announced once. Repeat keyboard traversal and activation without a mouse. AT-SPI exposure and speech remain **UNVERIFIED**.
+- Use Tab and Shift+Tab to reach both buttons; inspect visible focus. Use Space to increment each independently. Record Return and keypad Enter behavior under the selected native control style. Hardware-keyboard interaction remains **UNVERIFIED**; the native input evidence above used synthetic events.
+- Inspect the AT-SPI tree with an accessibility inspector. Confirm count text, action names, roles, focus order and enabled/focused states. With a screen reader active, increment each counter and confirm that the corresponding updated count is announced once. Repeat keyboard traversal and activation without a mouse. Native AT-SPI exposure and event delivery have agent-produced evidence as described above; audible speech remains **UNVERIFIED**.
 
 ## Integer-limit evidence
 

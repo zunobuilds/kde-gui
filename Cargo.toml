@@ -9,7 +9,8 @@ publish = false
 include = [
     "/src/**", "/qml/**", "/native/**", "/tests/**",
     "/build.rs", "/CMakeLists.txt", "/Cargo.lock", "/LICENSE-*", "/README.md",
-    "/changelog/**", "/docs/ARCHITECTURE.md", "/docs/BUILDING.md",
+    "/changelog/**", "/CONTRIBUTING.md", "/AGENTS.md", "/docs/README.md",
+    "/docs/ARCHITECTURE.md", "/docs/BUILDING.md",
     "/docs/DEPENDENCIES.md", "/docs/DECISIONS.md",
     "/docs/DEVELOPMENT_TOOLS.md", "/docs/THEME_SUPPORT.md",
 ]

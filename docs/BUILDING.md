@@ -4,19 +4,20 @@ The prototype is tested on Fedora 44 with Rust/Cargo 1.99.0, GCC C++ 16.2.1, Qt 
 
 ## Rust foundation
 
-From the repository root:
+Commands below assume a source checkout and run from its root; no registry package is published. Rust/Cargo must support edition 2024. To keep dependency downloads and build output in the checkout, use:
 
 ```sh
 export CARGO_HOME="$PWD/.work/implementation/cargo-home"
+export CARGO_TARGET_DIR="$PWD/target"
 cargo test --locked
 cargo run --manifest-path smoke/rust-consumer/Cargo.toml --locked
 ```
 
-The default library has no dependencies and requires no Qt SDK. `Counter::default()` starts at zero; `increment()` returns `false` at `i32::MAX` without changing the value. The consumer is a standalone Cargo project using the public `kde_gui::Counter` API.
+The tests should pass, and the standalone consumer prints `Independent Rust consumer: count = 3`. The default library has no dependencies and requires no Qt SDK. `Counter::default()` starts at zero; `increment()` returns `false` at `i32::MAX` without changing the value. For a path dependency and minimal API example, see the [quick start](../README.md#quick-start).
 
 ## QML module
 
-Build requirements are a C++17 compiler, Cargo, CMake 3.24 or newer, Ninja, Qt Core/QML/Quick/QuickControls2 development files and Qt's QML registration tools. Count announcements require the Qt 6.8 accessibility API; the observed validation uses Qt 6.11.2. Kirigami and Qt Quick Controls must be installed for runtime use. The accessibility regression executable also requires Qt Test development files. Automated QML tests require Qt Quick Test's runner (`qmltestrunner-qt6` on Fedora).
+Build requirements are a C++17 compiler, Cargo, CMake 3.24 or newer, Ninja, Qt 6.8 or newer Core/QML/Quick/QuickControls2 development files and Qt's QML registration tools. Count announcements require the Qt 6.8 accessibility API; the observed validation uses Qt 6.11.2. Kirigami and Qt Quick Controls must be installed for runtime use. The accessibility regression executable also requires Qt Test development files. Automated QML tests require Qt Quick Test's runner (`qmltestrunner-qt6` on Fedora).
 
 ```sh
 cmake -S . -B build -G Ninja \
@@ -30,6 +31,8 @@ export QML_IMPORT_PATH="$PWD/build/stage/lib/qt6/qml"
 export QT_FORCE_STDERR_LOGGING=1
 ```
 
+CTest should report two passing suites. Installation writes the module and project licence files under `build/stage`, without a system-wide install.
+
 The CMake target calls `cargo build --release --features qt --locked`, then links the native plugin wrapper. `KDE_GUI_QML_INSTALL_DIR` controls the import-root location relative to the installation prefix; its default uses CMake's platform library directory. The import root must contain `org/zunobuilds/kdegui`, rather than pointing directly at that module directory.
 
 The staged module contains `qmldir`, `plugin.qmltypes`, `qml/CounterView.qml` and `liborg_zunobuilds_kdegui.so`. It uses system Qt/Kirigami libraries. Redistributed binaries need their own dependency and notice review; see [dependencies](DEPENDENCIES.md).
@@ -42,7 +45,7 @@ cmake --build build/qml-consumer
 build/qml-consumer/kde_gui_qml_consumer "$PWD/smoke/qml-consumer/Main.qml"
 ```
 
-This engine links only Qt Gui/QML and imports the installed library by URI. It registers no project types or context properties. The window contains two independent counters. A native desktop session is needed for visual inspection.
+This engine links only Qt Gui/QML and imports the installed library by URI. It registers no project types or context properties. The window contains two independent counters. A native desktop session is needed for visual inspection. Both counters should start at zero and increment independently; close the window to exit.
 
 For a headless load check, add `--check` and use `QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software`. This checks window construction and import, then exits; it does not perform visual acceptance.
 
@@ -82,7 +85,7 @@ Cargo dependency fetching succeeded in the sandbox. Missing offline crates were 
 
 State tests cover initialization, repeated increments, integer saturation and independent instances. QML tests cover read-only bridge state, notifications, label updates, accessible label text, clicks, Space activation, Tab/Shift+Tab traversal, keyboard focus state, cancelled presses, disabled input and resizing with larger fonts. The QML runner reports 21 passes, including six setup/teardown cases; 15 are behavior/data cases.
 
-CTest also checks Qt accessibility interfaces for label/button roles and names, focus and disabled states, accessible press actions and one count announcement event after an increment. This verifies the Qt event rather than speech output. Separate native AT-SPI probes verify tree roles/names, enabled/focusable/focused and limit-disabled states, press actions and announcement delivery. The debugger-seeded integration check below also covers the integer-limit bridge, notification suppression and automatic button-disable transition. Native visual and audible results remain **UNVERIFIED**.
+CTest also checks Qt accessibility interfaces for label/button roles and names, focus and disabled states, accessible press actions and one count announcement event after an increment. This verifies the Qt event rather than speech output. Separate native AT-SPI probes verify tree roles/names, enabled/focusable/focused and limit-disabled states, press actions and announcement delivery. The debugger-seeded integration check below also covers the integer-limit bridge, notification suppression and automatic button-disable transition. Audible screen-reader output remains **UNVERIFIED**; controlled native observations and their limits are described below.
 
 Headless tests use `QT_QUICK_BACKEND=software`. `software` is not a valid `QSG_RHI_BACKEND` value. CTest and the package check set `KDE_HOME_READONLY=1` to suppress KConfig's unwritable-configuration warning without changing filesystem permissions or host settings.
 
